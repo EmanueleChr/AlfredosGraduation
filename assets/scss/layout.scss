@@ -1,0 +1,84 @@
+@for $x from 0 through 10 {
+    $px : $x * 5px;
+
+    .m-#{$x} {
+        margin: $px;
+    }
+    .mr-#{$x} {
+        margin-right: $px;
+    }
+    .ml-#{$x} {
+        margin-left: $px;
+    }
+    .my-#{$x} {
+        margin-top: $px;
+        margin-bottom: $px;
+    }
+    .mx-#{$x} {
+        margin-right: $px;
+        margin-left: $px;
+    }
+    .mt-#{$x} {
+        margin-top: $px;
+    }
+    .mb-#{$x} {
+        margin-bottom: $px;
+    }
+
+    .p-#{$x} {
+        padding: $px;
+    }
+    .pr-#{$x} {
+        padding-right: $px;
+    }
+    .pl-#{$x} {
+        padding-left: $px;
+    }
+    .py-#{$x} {
+        padding-top: $px;
+        padding-bottom: $px;
+    }
+    .px-#{$x} {
+        padding-right: $px;
+        padding-left: $px;
+    }
+    .pt-#{$x} {
+        padding-top: $px;
+    }
+    .pb-#{$x} {
+        padding-bottom: $px;
+    }
+}
+
+.d-flex {
+    display: flex;
+
+    &.align-items-center {
+        align-items: center;
+    }
+    &.align-items-start {
+        align-items: flex-start;
+    }
+    &.align-items-end {
+        align-items: flex-end;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-content-center {
+        justify-content: center;
+    }
+    
+    &.justify-content-start {
+        justify-content: flex-start;
+    }
+    &.justify-content-between {
+        justify-content: space-between;
+    }
+    &.justify-content-end {
+        justify-content: flex-end;
+    }
+
+}
