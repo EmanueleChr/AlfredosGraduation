@@ -1,0 +1,77 @@
+@import 'mixins.scss';
+
+:host {
+    
+    display: block;
+
+    .wrapper {
+        position: relative;
+        background: white;
+        border-radius: 7px;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+
+        width: 700px;
+        max-width: 100%;
+
+        @include boxShadow(2px 2px 10px 0 #00000010);
+
+        display: flex;
+        flex-flow: row wrap;
+
+        .prof-neeno {
+            @include animate(slide 2s ease-in 1 forwards);
+            visibility: hidden;
+        }
+
+        .form-wrapper {
+            margin: 35px;
+            visibility: hidden;
+            @include animate(appear 1s linear 1 forwards);
+            animation-delay: 2s;
+
+            * { color: black !important; }
+
+            .options-wrapper {
+                h4 {
+                    cursor: pointer;
+
+                    &:hover::after {
+                        content: '  <';
+                        font-size: 1em;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide {
+    from {
+        @include transform(translateY(-100%));
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        @include transform(translateY(0));
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        @include transform(translatex(-20px));
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        @include transform(translateX(0));
+        visibility: visible;
+        opacity: 1;
+    }
+}

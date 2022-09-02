@@ -1,0 +1,18 @@
+:host {
+    position: absolute;
+    top: 0%;
+
+    width: 100%;
+    
+    * {
+        pointer-events: none;
+        user-select: none;
+    }
+    
+    h1 {
+        opacity: .05;
+        font-size: 14vw;
+        width: 100%;
+        text-align: center;
+    }
+}

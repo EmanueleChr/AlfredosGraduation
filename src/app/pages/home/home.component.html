@@ -1,0 +1,46 @@
+<div class="wrapper">
+
+    <app-countdown></app-countdown>
+
+
+    <div class="omini-wrapper">
+        <div class="omini-group" [style.marginLeft]="progress">
+
+            <div class="count-animation" *ngIf="countOminiAnimation">
+                <h2 [style.color]="countOminiAnimation.sex === 'male' ? '#3030b2' : 'pink'">
+                    {{ countOminiAnimation.text }}
+                </h2>
+            </div>
+            <ng-container *ngFor="let o of omini">
+                <app-omino [spread]="spread" [sex]="o.sex"></app-omino>
+            </ng-container>
+
+        </div>
+
+        <img src="/assets/images/goal.svg" height="50px" alt="GOAL">
+    </div>
+
+    <div class="line-wrapper">
+
+        <div class="line">
+        </div>
+
+    </div>
+
+    <div class="stars-wrapper">
+        <ng-container *ngFor="let s of stars">
+            <app-star></app-star>
+        </ng-container>
+    </div>
+
+    <div class="actions">
+        <button>WANM</button>
+        <button>AUGURI WAGLIU'</button>
+        <button (click)="showDialog = 'boyorgirl'">PARTECIPO</button>
+    </div>
+    
+    <div class="dialog-wrapper" *ngIf="showDialog">
+        <app-dialog-boy-girl (onclose)="showDialog = null"
+            (onselect)="addOmino($event)"></app-dialog-boy-girl>
+    </div>
+</div>

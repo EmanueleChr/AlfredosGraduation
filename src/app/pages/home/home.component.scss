@@ -1,0 +1,117 @@
+@import 'mixins.scss';
+
+.wrapper {
+    background-color: #002235;
+    height: 100vh;
+    width: 100vw;
+
+    * {
+        user-select: none;
+    }
+    
+    .omini-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 1250px;
+        padding-top: 25%;
+        max-width: 95%;
+        margin:auto;
+
+        .omini-group {
+            position: relative;
+            @include transition(all .5s ease-out);
+        }
+
+        .count-animation {
+            position: absolute;
+            z-index: 9999;
+            font-size: 2.5em;
+            @include animate(slideOutToTop 3s ease-out 1 forwards);
+        }
+    }
+
+    .line-wrapper {
+        background: #ffffff09;
+        height: 15px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        .line {
+            background: white;
+            height: 2px;
+            width: 1250px;
+            max-width: 85%;
+            visibility: hidden;
+            @include animate(expand 2s ease-out 1 forwards);
+        }
+    }
+
+    .stars-wrapper {
+        position: absolute; 
+        height: 50vh;
+        top: 20vh;
+        left:0;
+        width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+        user-select: none;
+    }
+
+    .actions {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button:not(:last-of-type) {
+            margin-right: 10px;
+        }
+    }
+
+    .dialog-wrapper {
+        position: fixed;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        background: #00000040;
+    }
+}
+
+@keyframes expand {
+    from {
+        @include transform(scale(2));
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        @include transform(scale(1));
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideOutToTop {
+    from {
+        @include transform(translateY(0) scale(.3));
+        visibility: visible;
+        opacity: 1;
+    }
+
+    to {
+        @include transform(translateY(-200%) scale(1.6));
+        opacity: 0;
+        visibility: hidden;
+    }
+}

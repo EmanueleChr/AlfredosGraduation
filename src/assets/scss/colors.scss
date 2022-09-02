@@ -1,0 +1,35 @@
+$colPrimary : #06c;
+$colPrimaryDarker : #035bb5;
+$colAccent : yellow;
+$colLight : white;
+$colDark : black;
+$colSuccess : green;
+$colError : rgb(244, 26, 26);
+
+.col-light {
+    color: $colLight;
+}
+
+.col-accent {
+    color: $colAccent;
+}
+
+.col-dark {
+    color: $colDark;
+}
+
+.col-primary-darker {
+    color: $colPrimaryDarker;
+}
+
+.col-error {
+    color: $colError;
+}
+
+.bg-primary {
+    background-color: $colPrimary;
+    
+    * { 
+        color: $colLight; 
+    }
+}

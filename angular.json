@@ -30,6 +30,13 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/",
+                "src/assets/images/",
+                "src/assets/scss/"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -100,6 +107,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

@@ -1,0 +1,23 @@
+@import 'mixins.scss';
+
+img {
+    @include animate(jump 1s cubic-bezier(.94,0,.22,.29) infinite forwards);
+    animation-play-state: running;
+    visibility: hidden;
+    position: absolute;
+}
+
+@keyframes jump {
+
+    0% {
+        @include transform(scaleY(.95) scaleX(1.05) translateY(-5px));
+    }
+    50% {
+        @include transform(scaleY(1.1) scaleX(.9) translateY(10px));
+    }
+    100% {
+        visibility: visible;
+        @include transform(scaleY(.95) scaleX(1.05) translateY(-5px));
+    }
+    
+}

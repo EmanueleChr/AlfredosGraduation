@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;600;700;800&display=swap');
+
+* {
+    font-family: 'JetBrains Mono', sans-serif, monospace;
+    color: white;
+}
+
+.f-bold {
+    font-weight: bold;
+}
+
+.f-light {
+    font-weight: lighter;
+}
+
+.f-small {
+    font-size: .9em;
+}
+
+.f-big {
+    font-size: 1.1em;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@for $var from 0 to 10 {
+    $alpha : 0.1 * $var;
+
+    .alpha-#{$var} {
+        opacity: $alpha;
+    }
+    
+}

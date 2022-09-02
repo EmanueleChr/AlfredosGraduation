@@ -1,0 +1,35 @@
+@mixin transform ($prop) {
+    transform: $prop;
+    -moz-transform: $prop;
+    -webkit-transform: $prop;
+    -o-transform: $prop;
+}
+@mixin transform-origin ($prop) {
+    transform-origin: $prop;
+    -moz-transform-origin: $prop;
+    -webkit-transform-origin: $prop;
+    -o-transform-origin: $prop;
+}
+@mixin animate ($prop) {
+    animation: $prop;
+    -moz-animation: $prop;
+    -webkit-animation: $prop;
+    -o-animation: $prop;
+}
+@mixin transition ($prop) {
+    transition: $prop;
+    -moz-transition: $prop;
+    -webkit-transition: $prop;
+    -o-transition: $prop;
+}
+@mixin boxShadow ($prop) {
+    box-shadow: $prop;
+    -moz-box-shadow: $prop;
+    -webkit-box-shadow: $prop;
+    -o-box-shadow: $prop;
+}
+
+@mixin sideMenuWrapperLayout () {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 5fr;
+}
