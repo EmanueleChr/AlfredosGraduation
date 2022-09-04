@@ -8,6 +8,7 @@ import { StarComponent } from './elements/star/star.component';
 import { CountdownComponent } from './elements/countdown/countdown.component';
 import { OminoComponent } from './elements/omino/omino.component';
 import { DialogBoyGirlComponent } from './elements/dialog-boy-girl/dialog-boy-girl.component';
+import { TypingTextComponent } from './elements/typing-text/typing-text.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DialogBoyGirlComponent } from './elements/dialog-boy-girl/dialog-boy-gi
     StarComponent,
     CountdownComponent,
     OminoComponent,
-    DialogBoyGirlComponent
+    DialogBoyGirlComponent,
+    TypingTextComponent
   ],
   imports: [
     BrowserModule,

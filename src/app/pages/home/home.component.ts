@@ -8,7 +8,7 @@ import * as moment from 'moment';
 })
 export class HomeComponent implements OnInit {
 
-  NUM_OMINI = 15
+  NUM_OMINI = 5
   NUM_STELLE = 150
 
   stars : any[] = []

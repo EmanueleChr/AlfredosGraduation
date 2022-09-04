@@ -28,6 +28,15 @@
             font-size: 2.5em;
             @include animate(slideOutToTop 3s ease-out 1 forwards);
         }
+
+        .prog-sign {
+            position: absolute;
+            top: 96%;
+            height: 20px;
+            width: 6px;
+            background: yellow;
+            border-radius: 7px;
+        }
     }
 
     .line-wrapper {
@@ -70,6 +79,21 @@
 
         button:not(:last-of-type) {
             margin-right: 10px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .omini-wrapper {
+            padding-top: 60%;
+        }
+
+        .actions {
+            display: grid;
+            gap: 10px;
+
+            button {
+                margin-right: 0 !important;
+            }
         }
     }
 

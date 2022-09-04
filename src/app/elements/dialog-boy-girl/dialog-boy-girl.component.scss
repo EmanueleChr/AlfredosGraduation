@@ -1,7 +1,7 @@
 @import 'mixins.scss';
 
 :host {
-    
+    max-width: calc(100% - 30px);
     display: block;
 
     .wrapper {
@@ -44,6 +44,12 @@
                     }
                 }
             }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .wrapper {
+            flex-flow: column wrap;
         }
     }
 }

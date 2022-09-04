@@ -6,17 +6,29 @@
     </div>
 
     <div class="prof-neeno">
-        <img src="/assets/images/prof_neeno.png" height="300px" alt="Prof. Neeno">
+        <ng-container *ngIf="step === 1">
+            <img src="assets/images/prof_neeno.png" height="300px" alt="Prof. Neeno">
+        </ng-container>
+
+        <ng-container *ngIf="step === 2">
+            <img src="assets/images/armando.png" height="300px" alt="Armando" style="position: relative; top: 40px;">
+        </ng-container>
     </div>
 
     <div class="form-wrapper">
-        <h2>
-            Are you a boy or a girl?
-        </h2>
+        <ng-container *ngIf="step === 1">
+            <h2>
+                <app-typing-text text="Are you a boy or a girl?" [delay]="2000"></app-typing-text>
+            </h2>
+    
+            <div class="options-wrapper">
+                <h4 (click)="select('male')">Boy</h4>
+                <h4 (click)="select('female')">Girl</h4>
+            </div>
+        </ng-container>
 
-        <div class="options-wrapper">
-            <h4 (click)="select('male')">Boy</h4>
-            <h4 (click)="select('female')">Girl</h4>
-        </div>
+        <ng-container *ngIf="step === 2">
+            <h1><app-typing-text [text]="step2text"></app-typing-text></h1>
+        </ng-container>
     </div>
 </div>

@@ -9,7 +9,7 @@ export class StarComponent implements OnInit {
 
   width : number = this.random(25, 125)
   opacity : number = this.random(1, 25) / 100
-  speed : number = this.random(100, 3000) / 10
+  speed : number = this.random(10, 2000) / 10
   left  : number = this.random(-100, 100)
   top   : number = this.random(-100, 100)
 

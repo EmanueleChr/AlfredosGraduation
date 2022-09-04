@@ -11,13 +11,17 @@
                     {{ countOminiAnimation.text }}
                 </h2>
             </div>
+
+            <!-- Segnalino di progresso -->
+            <div class="prog-sign"></div>
+
             <ng-container *ngFor="let o of omini">
                 <app-omino [spread]="spread" [sex]="o.sex"></app-omino>
             </ng-container>
 
         </div>
 
-        <img src="/assets/images/goal.svg" height="50px" alt="GOAL">
+        <img src="assets/images/goal.svg" height="50px" alt="GOAL">
     </div>
 
     <div class="line-wrapper">

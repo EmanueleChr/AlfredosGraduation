@@ -9,6 +9,9 @@ export class DialogBoyGirlComponent implements OnInit {
   @Output() onclose = new EventEmitter()
   @Output() onselect = new EventEmitter<'male'|'female'>()
   
+  step : 1 | 2 = 1
+  step2text : string = ''
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +24,10 @@ export class DialogBoyGirlComponent implements OnInit {
   select (which : 'male' | 'female') {
     this.onselect.emit(which)
 
-    this.close()
+    this.step = 2
+
+    this.step2text = which === 'male' ? 'Sei molto bello' : 'Sei molto bella'
+
+    setTimeout(() => this.close(), 3000)
   }
 }
