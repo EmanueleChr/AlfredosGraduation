@@ -29,9 +29,9 @@
             margin: 35px;
             visibility: hidden;
             @include animate(appear 1s linear 1 forwards);
-            animation-delay: 2s;
+            //animation-delay: 2s;
 
-            * { color: black !important; }
+            *:not(.black) { color: black !important; }
 
             .options-wrapper {
                 h4 {

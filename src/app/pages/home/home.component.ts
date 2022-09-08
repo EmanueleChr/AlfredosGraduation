@@ -18,15 +18,18 @@ export class HomeComponent implements OnInit {
   
   countOminiAnimation : { text : string, sex : 'male' | 'female' } | null = null //{ text : '+1', sex : 'female'}
 
+  test = ''
+  tt () { alert(this.test) }
+
   /**
    * Muove gli omini verso goal
    */
   progress = '0%'
-
+  
   showDialog : 'boyorgirl' | null = null
-
+  
   constructor(private zone : NgZone) { }
-
+  
   ngOnInit(): void {
     this.stars = new Array(this.NUM_STELLE)
 

@@ -1,0 +1,30 @@
+@import 'mixins.scss';
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    width: fit-content;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .label, .label * {
+        font-size: 1.3em;
+        color: black !important;
+    }
+
+
+    input {
+        background: white;
+        @include boxShadow(2px 2px 7px 0 #00000030);
+        font-size: 1.6em;
+        padding: 7px 10px;
+        border-radius: 10px;
+        color: #484848;
+        outline: none;
+        @include transition(all .2s ease);
+
+        &:focus {
+            @include boxShadow(2px 2px 0 4px black);
+        }
+    }
+}

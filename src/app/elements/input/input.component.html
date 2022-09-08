@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="label" style="color: black" *ngIf="!typingLabel && label && label !== ''">
+        {{ label }}
+    </div>
+
+    <div class="label black" style="color: black"  *ngIf="typingLabel && label && label !== ''">
+        <app-typing-text [text]="label"></app-typing-text>
+    </div>
+
+    <input type="text" [(ngModel)]="value" [placeholder]="placeholder">
+</div>

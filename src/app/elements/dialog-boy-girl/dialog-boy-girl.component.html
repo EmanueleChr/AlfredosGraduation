@@ -6,29 +6,40 @@
     </div>
 
     <div class="prof-neeno">
-        <ng-container *ngIf="step === 1">
+        <ng-container *ngIf="step <= 2">
             <img src="assets/images/prof_neeno.png" height="300px" alt="Prof. Neeno">
         </ng-container>
 
-        <ng-container *ngIf="step === 2">
+        <ng-container *ngIf="step === 3">
             <img src="assets/images/armando.png" height="300px" alt="Armando" style="position: relative; top: 40px;">
         </ng-container>
     </div>
 
     <div class="form-wrapper">
-        <ng-container *ngIf="step === 1">
-            <h2>
-                <app-typing-text text="Are you a boy or a girl?" [delay]="2000"></app-typing-text>
-            </h2>
+        <ng-container *ngIf="step <= 2">
+            <ng-container *ngIf="step === 1">
+                <h2>
+                    <app-typing-text text="Are you a boy or a girl?" [delay]="0"></app-typing-text>
+                </h2>
+        
+                <div class="options-wrapper">
+                    <h4 (click)="select('male')">Boy</h4>
+                    <h4 (click)="select('female')">Girl</h4>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="step === 2">
+                <app-input label="Come ti chiami?" 
+                    [placeholder]="sex === 'female' ? 'Es. Mariarca' : 'Es. Ciro Esposito'" 
+                    [(ngModel)]="nome"></app-input>
     
-            <div class="options-wrapper">
-                <h4 (click)="select('male')">Boy</h4>
-                <h4 (click)="select('female')">Girl</h4>
-            </div>
+                <button (click)="selectName()" class="mt-3 black" style="color: white;">SONO IO</button>
+            </ng-container>
         </ng-container>
 
-        <ng-container *ngIf="step === 2">
-            <h1><app-typing-text [text]="step2text"></app-typing-text></h1>
+
+        <ng-container *ngIf="step === 3">
+            <h1><app-typing-text [text]="step3text"></app-typing-text></h1>
         </ng-container>
     </div>
 </div>
