@@ -16,6 +16,12 @@
     -webkit-animation: $prop;
     -o-animation: $prop;
 }
+@mixin animationDelay ($prop) {
+    animation-delay: $prop;
+    -moz-animation-delay: $prop;
+    -webkit-animation-delay: $prop;
+    -o-animation-delay: $prop;
+}
 @mixin transition ($prop) {
     transition: $prop;
     -moz-transition: $prop;
