@@ -1,0 +1,86 @@
+@import 'mixins.scss';
+@import 'colors.scss';
+
+.wrapper {
+    color: black !important;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &.disappear {
+        @include animate(disappear .5s ease 1 forwards);
+    }
+
+    .title {
+        font-size: 3vw;
+        padding: 0 10%;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        .title {
+            font-size: 5vw;
+        }
+    }
+
+    div.nome {
+        @include animate(appear 1s ease 1 forwards);
+        opacity: 0;
+        @include animationDelay(3s);
+        margin-top: 15px;
+    }
+
+    
+    .line {
+        position: absolute;
+        background-color: #e8e8e869;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        @include animate(line 5s ease 1 forwards);
+    }
+}
+
+@keyframes appear {
+    from {
+        @include transform(translateY(100px));
+        opacity: 0;
+    }
+
+    to {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        @include transform(scale(1));
+        opacity: 1;
+    }
+
+    to {
+        @include transform(scale(2));
+        opacity: 0;
+    }
+}
+
+@keyframes line {
+    0% {
+        @include transform(scale(0, .001));
+    }
+
+    70% {
+        @include transform(scale(1, .001));
+    }
+
+    100% {
+        @include transform(scale(1, 1))
+    }
+}

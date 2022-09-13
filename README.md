@@ -4,8 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # GitHub Access Token
 Usato per utilizzare GitHub API (per fare l'upload dei nominativi dei partecipanti)
-**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**
+**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**
 
+# GitHub Pages
+Per pubblicare su pages lancia il comando `ng deploy --base-href=https://emanuelechr.github.io/AlfredosGraduation/`
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

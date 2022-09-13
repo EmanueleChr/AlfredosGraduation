@@ -1,5 +1,12 @@
 @import 'mixins.scss';
 
+body {
+    background: #002235;
+}
+:host {
+    @include animate(fadeIn 1s ease 1 forwards);
+}
+
 .wrapper {
     background-color: #002235;
     height: 100vh;
@@ -76,7 +83,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+        background-color: #002235;
+        padding-bottom: 25px;
+        
         button:not(:last-of-type) {
             margin-right: 10px;
         }
@@ -84,7 +93,7 @@
 
     @media (max-width: 800px) {
         .omini-wrapper {
-            padding-top: 60%;
+            padding-top: 50%;
         }
 
         .actions {
@@ -94,6 +103,10 @@
             button {
                 margin-right: 0 !important;
             }
+        }
+
+        .place {
+            margin-top: 130px;
         }
     }
 
@@ -137,5 +150,16 @@
         @include transform(translateY(-200%) scale(1.6));
         opacity: 0;
         visibility: hidden;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
     }
 }

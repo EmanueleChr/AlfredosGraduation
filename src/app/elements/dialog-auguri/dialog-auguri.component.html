@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+    <div class="close">
+        <h3 class="m-0" (click)="close()">Close</h3>
+    </div>
+    
+    <ng-container *ngIf="step === 1">
+
+        <div class="form-wrapper d-flex column">
+    
+            <div class="d-flex hearts">
+                <i class="fa-solid fa-heart" [ngStyle]="{color: rating >= 1 ? 'red' : 'grey'}" (click)="rating = 1"></i>
+                <i class="fa-solid fa-heart" [ngStyle]="{color: rating >= 2 ? 'red' : 'grey'}" (click)="rating = 2"></i>
+                <i class="fa-solid fa-heart" [ngStyle]="{color: rating >= 3 ? 'red' : 'grey'}" (click)="rating = 3"></i>
+                <i class="fa-solid fa-heart" [ngStyle]="{color: rating >= 4 ? 'red' : 'grey'}" (click)="rating = 4"></i>
+                <i class="fa-solid fa-heart" [ngStyle]="{color: rating == 5 ? 'red' : 'grey'}" (click)="rating = 5"></i>
+            </div>
+    
+            <app-input [(ngModel)]="nome" 
+                label="Firmati uaglio'" placeholder="Es: Gennaro"></app-input>
+            
+            <app-input [(ngModel)]="body" [textarea]="true"
+                label="Scrivi una cosa ja" placeholder="Es: Numero 1 fra!"></app-input>
+    
+            <button
+                style="margin-top: 40px" 
+                [disabled]="body.length === 0 || body === ''"
+                (click)="save()">IN TUTTO BUONSENSO, QUESTO E' QUELLO CHE PENSO</button>
+        </div>
+
+    </ng-container>
+
+    <div *ngIf="step === 2">
+        <h2>
+            <i class="fa-solid fa-heart mr-2" style="color: red"></i>
+            <app-typing-text text="E grazie" style="color: black"></app-typing-text>
+        </h2>
+        <small class="alpha-7">
+            <app-typing-text style="color: black"
+                text="Mo controllo che non hai scritto c*****e e poi la pubblico.              Forse." [delay]="1200"></app-typing-text>
+        </small>
+    </div>
+</div>

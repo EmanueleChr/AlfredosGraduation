@@ -16,8 +16,15 @@ export class CountdownComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const dataLaurea = moment()
-    dataLaurea.year(2022).month(9).day(21).hour(0).minute(0).seconds(0)
+    const dataLaurea = moment('2022-09-21')
+    // dataLaurea.year(2022).month(9).day(21).hour(0).minute(0).seconds(0)
+
+    // dataLaurea.set('year', 2022)
+    // dataLaurea.set('month', 8)
+    // dataLaurea.set('days', 21)
+    // dataLaurea.set('hours', 0)
+    // dataLaurea.set('minutes', 0)
+    // dataLaurea.set('seconds', 0)
 
     this.duration = moment.duration(dataLaurea.diff(moment()))
 

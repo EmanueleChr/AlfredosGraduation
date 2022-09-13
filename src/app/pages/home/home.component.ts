@@ -1,5 +1,6 @@
 import { Component, Input, NgZone, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-home',
@@ -26,9 +27,10 @@ export class HomeComponent implements OnInit {
    */
   progress = '0%'
   
-  showDialog : 'boyorgirl' | null = null
+  showDialog : 'boyorgirl' | 'auguri' | null = null
   
-  constructor(private zone : NgZone) { }
+  constructor(private zone : NgZone,
+    private utils : UtilsService) { }
   
   ngOnInit(): void {
     this.stars = new Array(this.NUM_STELLE)
@@ -38,6 +40,11 @@ export class HomeComponent implements OnInit {
         sex : Math.random() < .5 ? 'male' : 'female'
       })
     }
+
+    if (this.utils.alreadySent())
+      this.addOmino(
+        this.utils.getPartecipant().sex
+      )
 
     // this.omini = new Array(5)
 
@@ -56,11 +63,9 @@ export class HomeComponent implements OnInit {
 
   calcProgress () {
     this.zone.run(() => {
-      const dataLaurea = moment()
-      dataLaurea.year(2022).month(9).day(21).hour(0).minute(0).seconds(0)
+      const dataLaurea = moment('2022-09-21')
 
-      const dataInizio = moment()
-      dataInizio.year(2022).month(8).day(1).hour(0).minute(0).seconds(0)
+      const dataInizio = moment('2022-09-01')
 
       const dateNow = moment()
 

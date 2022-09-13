@@ -19,7 +19,7 @@
         <ng-container *ngIf="step <= 2">
             <ng-container *ngIf="step === 1">
                 <h2>
-                    <app-typing-text text="Are you a boy or a girl?" [delay]="0"></app-typing-text>
+                    <app-typing-text text="Are you a boy or a girl?" [delay]="2000"></app-typing-text>
                 </h2>
         
                 <div class="options-wrapper">
@@ -33,13 +33,20 @@
                     [placeholder]="sex === 'female' ? 'Es. Mariarca' : 'Es. Ciro Esposito'" 
                     [(ngModel)]="nome"></app-input>
     
-                <button (click)="selectName()" class="mt-3 black" style="color: white;">SONO IO</button>
+                <button (click)="selectName()" class="mt-3 black" style="color: white;"
+                    [disabled]="nome.length < 3">SONO IO</button>
             </ng-container>
         </ng-container>
 
 
         <ng-container *ngIf="step === 3">
             <h1><app-typing-text [text]="step3text"></app-typing-text></h1>
+            <div>
+                <small style="opacity: .75;">
+                    <app-typing-text [delay]="1300" 
+                        text="Il tuo omino comparirà più tardi.                   Forse."></app-typing-text>
+                </small>
+            </div>
         </ng-container>
     </div>
 </div>

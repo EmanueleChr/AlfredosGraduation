@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import axios from 'axios';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-dialog-boy-girl',
@@ -16,9 +17,7 @@ export class DialogBoyGirlComponent implements OnInit {
   nome = ''
   sex : 'male' | 'female' = 'male'
 
-  ghToken = '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'
-
-  constructor() { }
+  constructor (private utils : UtilsService) { }
 
   ngOnInit(): void {
   }
@@ -40,28 +39,11 @@ export class DialogBoyGirlComponent implements OnInit {
   selectName () {
     this.step = 3
 
-    var data = JSON.stringify({
-      "message": "txt file",
-      "content": this.nome
-    });
+    const fileName = this.nome + "_" + this.utils.getRandomString()
 
-    var config = {
-        method: 'put',
-        url: `https://api.github.com/repos/EmanueleChr/AlfredosGraduation/partecipants/${this.nome}.txt`,
-        headers: {
-            'Authorization': `Bearer ${this.ghToken}`,
-            'Content-Type': 'application/json'
-        },
-        data: data
-    };
+    this.utils.uploadToGithub(fileName, this.nome, 'partecipants')
+    this.utils.savePartecipant(this.nome, this.sex)
 
-    axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-      // setTimeout(() => this.close(), 3000)
+    setTimeout(() => this.close(), 6000)
   }
 }

@@ -7,5 +7,8 @@
         <app-typing-text [text]="label"></app-typing-text>
     </div>
 
-    <input type="text" [(ngModel)]="value" [placeholder]="placeholder">
+    <input *ngIf="!textarea" type="text" [(ngModel)]="value" [placeholder]="placeholder">
+    <textarea *ngIf="textarea" type="text" [(ngModel)]="value" [placeholder]="placeholder"
+        cols="40" rows="4"></textarea>
+
 </div>

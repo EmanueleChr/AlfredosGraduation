@@ -17,7 +17,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label = 'Come ti chiami?'
   @Input() placeholder = ''
   @Input() typingLabel = true
-  
+  @Input() textarea = false
+
   onchange = (val : any) => {}
   ontouch = () => {}
 
@@ -30,8 +31,15 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.onchange(newVal)
   }
 
+  get value () {
+    return this._val
+  }
+
   constructor() { }
 
+  ngAfterViewInit () {
+    console.log(this.value)
+  }
   writeValue(obj: any): void {
     this.value = obj
   }

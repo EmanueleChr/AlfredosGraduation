@@ -12,6 +12,9 @@ import { OminoComponent } from './elements/omino/omino.component';
 import { DialogBoyGirlComponent } from './elements/dialog-boy-girl/dialog-boy-girl.component';
 import { TypingTextComponent } from './elements/typing-text/typing-text.component';
 import { InputComponent } from './elements/input/input.component';
+import { ReviewsComponent } from './elements/reviews/reviews.component';
+import { DialogAuguriComponent } from './elements/dialog-auguri/dialog-auguri.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { InputComponent } from './elements/input/input.component';
     OminoComponent,
     DialogBoyGirlComponent,
     TypingTextComponent,
-    InputComponent
+    InputComponent,
+    ReviewsComponent,
+    DialogAuguriComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

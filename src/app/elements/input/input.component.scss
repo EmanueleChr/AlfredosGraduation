@@ -13,7 +13,7 @@
     }
 
 
-    input {
+    input, textarea {
         background: white;
         @include boxShadow(2px 2px 7px 0 #00000030);
         font-size: 1.6em;
@@ -27,4 +27,10 @@
             @include boxShadow(2px 2px 0 4px black);
         }
     }
+
+    textarea, input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
 }

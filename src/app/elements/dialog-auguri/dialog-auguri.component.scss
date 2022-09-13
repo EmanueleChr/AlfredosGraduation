@@ -1,0 +1,58 @@
+@import 'mixins.scss';
+
+:host {
+    max-width: calc(100% - 30px);
+    display: block;
+    font-size: .8em;
+
+    .hearts {
+        margin-bottom: 15px;
+        i {
+            margin-right: 5px;
+            font-size: 2em;
+            @include transition(all .2s ease);
+
+            &:hover {
+                @include transform(scale(1.2));
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        user-select: none;
+        cursor: pointer;
+        opacity: .8;
+        color: black;
+
+        * { color: black; }
+    }
+
+    .wrapper {
+        position: relative;
+        background: white;
+        border-radius: 7px;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+        z-index: 99999999999999999999999999999;
+
+        width: 700px;
+        max-width: 100%;
+
+        @include boxShadow(2px 2px 10px 0 #00000010);
+
+        display: flex;
+        flex-flow: row wrap;
+
+        app-input {
+            margin-bottom: 15px;
+        }
+    }
+
+    .form-wrapper {
+        max-width: 100%;
+    }
+}
