@@ -47,7 +47,7 @@ export class DialogBoyGirlComponent implements OnInit {
 
     var config = {
         method: 'put',
-        url: `https://api.github.com/repos/EmanueleChr/partecipants/contents/${this.nome}.txt`,
+        url: `https://api.github.com/repos/EmanueleChr/AlfredosGraduation/partecipants/${this.nome}.txt`,
         headers: {
             'Authorization': `Bearer ${this.ghToken}`,
             'Content-Type': 'application/json'
