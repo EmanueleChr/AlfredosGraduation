@@ -14,13 +14,14 @@ body {
 
     * {
         user-select: none;
+        box-sizing: border-box;
     }
     
     .omini-wrapper {
         display: flex;
         justify-content: space-between;
         width: 1250px;
-        padding-top: 25%;
+        padding-top: 20%;
         max-width: 95%;
         margin:auto;
 
